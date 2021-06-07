@@ -1,0 +1,24 @@
+<h1>注文一覧</h1>
+
+<table class="table">
+<tr>
+  <th>
+    商品名
+  </th>
+  <th>
+    顧客名
+  </th>
+</tr>
+<% @orders.each do |o| %>
+<tr>
+  <td>
+  <%= o.p_name %>
+  </td>
+  <td>
+  <%= o.c_name %>
+  </td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to("商品登録へ","/products/new") %>

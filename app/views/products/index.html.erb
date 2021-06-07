@@ -1,0 +1,29 @@
+<h1>商品一覧</h1>
+
+<table class="table">
+<tr>
+<th>
+  商品名
+</th>
+</tr>
+<% @products.each do |p| %>
+<tr>
+
+  <td>
+  <%= p.name %>
+  </td>
+  <td>
+  <%= link_to("詳細",products_show_path(id: p)) %>
+  </td>
+  <td>
+  <%= link_to("編集",products_edit_path(id: p)) %>
+  </td>
+  <td>
+  <%= link_to("削除",products_destroy_path(id: p), method: :delete) %>
+  </td>
+</tr>
+
+<% end %>
+</table>
+
+<%= link_to("商品登録へ","/products/new") %>

@@ -1,0 +1,45 @@
+<h1>注文作成ページ</h1>
+<%= form_for @order, url: orders_create_path do |f| %>
+  <p style="display: none;">customerId<%= f.text_field :customer_id, value: @customer_id %></p>
+  <table class="table">
+    <tr>
+      <th>
+        購入
+      </th>
+      <th>
+        商品名
+      </th>
+    </tr>
+    <% @products.each do |p| %>
+      <tr>
+        <td>
+          <input
+            type="radio"
+            name="selected"
+            id="<%= p.id %>"
+            value="<%= p.id %>"
+          >
+        </td>
+
+        <td>
+          <%= p.name %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<script type="text/javascript">
+# function check(id) {
+
+#   if (!document.getElementById(id).checked) {
+#     document.getElementsByClassName(id)[0].style.visibility = "hidden";
+#   } else {
+#     document.getElementsByClassName(id)[0].style.visibility = "visible";
+#   }
+# }
+
+</script>

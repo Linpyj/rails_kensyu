@@ -1,0 +1,9 @@
+<h1>顧客登録ページ</h1>
+
+<%= form_for @customer, url: customers_create_path do |f| %>
+
+  <p>顧客名<%= f.text_field :name %></p>
+  <p><%= f.submit  %></p>
+<% end %>
+
+<%= link_to("顧客一覧へ",customers_index_path) %>

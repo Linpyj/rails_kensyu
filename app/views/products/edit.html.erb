@@ -1,0 +1,8 @@
+<h1>商品編集ページ</h1>
+<%= form_for @product, url: {controller: 'products', action: 'update', id: @product.id}, html: {method: 'PUT'} do |f| %>
+
+  <p>商品名<%= f.text_field :name %></p>
+  <p><%= f.submit  %></p>
+<% end %>
+
+<%= link_to("商品一覧へ",products_index_path) %>

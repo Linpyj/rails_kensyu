@@ -1,0 +1,32 @@
+<h1>商品詳細</h1>
+
+<table class="table">
+<tr>
+<th>
+  顧客名
+</th>
+</tr>
+<tr>
+  <td>
+    <%= @customer.name %>
+  </td>
+</tr>
+</table>
+
+<table class="table">
+<tr>
+<th>
+  商品名
+</th>
+</tr>
+<% @products.each do |p| %>
+<tr>
+  <td>
+    <%= p.name %>
+  </td>
+</tr>
+<% end %>
+</table>
+
+
+<%= link_to("顧客一覧へ",customers_index_path) %>
